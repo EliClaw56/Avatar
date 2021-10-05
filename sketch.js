@@ -17,14 +17,14 @@ function setup(){
 
     angleMode(DEGREES);
     textAlign(CENTER,CENTER);
-  
+
     for (let i = 0; i < 15; i++) {
     bugs.push(new Jitter());
     }
     for (let j = 0; j < 15; j++) {
     bugs.push(new Jitter());
     }
-  
+
     noStroke();
     re = new Eye(420,300,90);
     le = new Eye(180,300,90);
@@ -33,15 +33,15 @@ function setup(){
     aTwo = new Back(2,2);
 }
 
-function draw(){ 
+function draw(){
     background(252,197,172)
     fill(255);
     myMap = map(mouseX,0, width, 0 ,20);
 
-    push(); 
+    push();
     aTwo.display();
     pop();
-  
+
     for (let i = 0; i < bugs.length; i++) {
     bugs[i].move();
     bugs[i].display();
@@ -55,18 +55,18 @@ function draw(){
     }
 
     aOne.display();
-  
+
     re.update(mouseX, mouseY);
     le.update(mouseX, mouseY);
     re.display();
     le.display();
-  
+
     lBrow(2,2);
     rBrow(2,2);
-  
+
     aTwo.move();
     Eye(2,2);
-    
+
     fill(200,50,90);
     textSize(25);
     text('Click Ears to Blush',300,30);
@@ -80,7 +80,7 @@ function draw(){
     noStroke();
     fill(249,77,105);
     circle(180,350,90);
-   
+
   if(circleChange == true){
       //RBlush
         noStroke();
@@ -95,11 +95,11 @@ function draw(){
 
 function mousePressed(){
           if(mouseX < width * 0.2 ||
-            mouseY > height * 0.8 || 
+            mouseY > height * 0.8 ||
             mouseX > width * 0.8 ||
             mouseY < height * 0.2){
             circleChange = !circleChange;
-} 
+}
 }
 
 function rBrow(xpos, ypos){
@@ -154,5 +154,5 @@ this.display = function() {
             this.size / 2,
             this.size / 2);
     pop();
-} 
+}
 }
